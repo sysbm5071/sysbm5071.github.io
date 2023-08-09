@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SystemBM5071的博客</title>
+    <link rel="icon" href="./images/ico.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+            padding:10px 0;
+            margin: 0;
+            background-color: #fff;
+        }
+        h2 {
+            color: #000000;
+            text-align: center;
+            padding:10px 0;
+            margin: 0;
+            background-color: #fff;
+        }
+        #blog-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .blog-item {
+            width: 500px;
+            margin: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .blog-item:last-child {
+            margin-bottom: 0;
+        }
+        .blog-item:hover {
+            transform: scale(1.02);
+        }
+        .blog-title {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .blog-date {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .blog-content {
+            margin-top: 10px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>SystemBM5071的博客</h1>
+    <h2><a href="https://space.bilibili.com/1780343359/">点我去SystemBM5071哔哩哔哩</a></h2>
+    <ul id="blog-list"></ul>
+
+    <script>
+        // 模拟从后端获取的博客数据
+        var blogData = [
+        {
+                title: "人生中的第一篇博文",
+                date: "2023-08-09",
+                content: "这是我的第一篇博客文章。十分感谢国内ChatGPT的镜像网站，帮助我生成了这个博客网站的代码。在这个代码内，它运用了HTML语言与JavaSrcipt语言，组合成为了这个网站！也十分感谢Github Pages 与 JS.ORG给予的网页部署服务！如果想知道要怎么部署的话，请前去哔哩哔哩搜索SystemBM5071，并关注我，我会及时更新哒！"
+            },
+            {
+                title: "未完待续。。。",
+                date: "未完待续。。。",
+                content: "未完待续。。。"
+            },
+        ];
+
+        var blogList = document.getElementById('blog-list');
+
+        // 遍历博客数据，生成博客列表项
+        for (var i = 0; i < blogData.length; i++) {
+            var blogItem = document.createElement('li');
+            blogItem.className = 'blog-item';
+
+            var blogTitle = document.createElement('h2');
+            blogTitle.className = 'blog-title';
+            blogTitle.textContent = blogData[i].title;
+
+            var blogDate = document.createElement('div');
+            blogDate.className = 'blog-date';
+            blogDate.textContent = '发布日期：' + blogData[i].date;
+
+            var blogContent = document.createElement('p');
+            blogContent.className = 'blog-content';
+            blogContent.textContent = blogData[i].content;
+
+            blogItem.appendChild(blogTitle);
+            blogItem.appendChild(blogDate);
+            blogItem.appendChild(blogContent);
+
+            blogList.appendChild(blogItem);
+        }
+    </script>
+</body>
+</html>
